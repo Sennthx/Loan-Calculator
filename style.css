@@ -18,8 +18,6 @@ body {
     background-color: rgb(251, 245, 243);
     color: rgb(18, 17, 19);
     font-family: 'Open Sans', sans-serif;
-    padding-top: 5%;
-    padding-bottom: 5%;
 }
 
 
@@ -156,7 +154,7 @@ hr {
 }
 
 .results {
-    display: flex;
+    display: none;
     flex-direction: column;
 }
 .flex {
