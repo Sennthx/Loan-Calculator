@@ -16,7 +16,10 @@ const outputInterest = document.querySelector("#outputInterest");
 
 calculate.addEventListener("click", calculate());
 
+
 function calculate(){
-    
+    if(numberCheck()) {
+
+    }
     
 }
