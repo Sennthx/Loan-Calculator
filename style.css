@@ -60,6 +60,22 @@ body {
     box-sizing: border-box;
 }
 
+.error {
+    background-color: rgb(255, 0, 0, 0.4);
+    font-size: 15px;
+    color: black;
+    padding: 10px;
+    display: none;
+    align-items: center;
+}
+
+.loading {
+    display: none;
+    padding-bottom: 10px;
+    justify-content: center;
+
+}
+
 .icon {
     display: flex;
     padding-top: 10px;
