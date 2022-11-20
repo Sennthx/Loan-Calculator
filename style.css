@@ -57,6 +57,7 @@ body {
     margin-bottom: 15px;
     border: 2px solid rgb(34, 39, 37);
     border-radius: 5px;
+    box-sizing: border-box;
 }
 
 .icon {
