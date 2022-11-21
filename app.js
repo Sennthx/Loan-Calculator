@@ -30,11 +30,12 @@ function calculateClick (){
 function main() {
     loading.style.display = "none";
     if(numberCheck()) {
-        if(setOutput())
+        if(setOutput()) {
+
+        }
 
 
         results.style.display = "flex";
-        document.querySelector("#asd").style.padding = "4% 0px 4% 0px";
     }
 }
 
