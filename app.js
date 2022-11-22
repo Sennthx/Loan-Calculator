@@ -66,6 +66,11 @@ function setOutput(){
         results.style.display = "flex";
         document.querySelector("#asd").style.padding = "5% 0 5% 0";
     } else {
+        for (let x in inputFields) {
+            if(Number.parseInt(inputFields[x].value) === 0){
+                inputFields[x].parentElement.parentElement.style.borderColor = "rgb(255, 0, 0)";
+            }
+        }
         errorMessage("Please check your numbers!")
     }
 }

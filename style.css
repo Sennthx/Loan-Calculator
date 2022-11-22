@@ -20,7 +20,6 @@ body {
     font-family: 'Open Sans', sans-serif;
 }
 
-
 .container {
     width: 500px;
 }
@@ -96,20 +95,11 @@ body {
     background-color: rgb(149, 161, 130);
     transition: 0.2s;
 }
+
 .input-field {
     width:90%
 }
-.year {
-    width: 100%;
-}
-.year:focus {
-    outline: 3px solid black;
-    
-}
 
-.asd {
-    background: rgb(124, 0, 0);
-}
 input {
     height: 100%;
     box-sizing: border-box;
@@ -130,6 +120,14 @@ input:focus {
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
     transition: all 0.3s;
+}
+
+.year {
+    width: 100%;
+}
+.year:focus {
+    outline: 3px solid black;
+    
 }
 
 #calculate {
