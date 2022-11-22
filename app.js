@@ -1,18 +1,13 @@
 // Getting input elements
-const errorMsg = document.querySelector("#error-msg");
 const loanInput = document.querySelector("#loanInput");
 const interestInput = document.querySelector("#interestInput");
 const yearInput = document.querySelector("#yearInput");
 const calculate = document.querySelector("#calculate");
-
 let inputFields = [loanInput, interestInput, yearInput];
 
-// Getting output elements
 const loading = document.querySelector(".loading");
+const errorMsg = document.querySelector("#error-msg");
 const results = document.querySelector(".results");
-const outputMonthly = document.querySelector("#outputMonthly");
-const outputPayment = document.querySelector("#outputPayment");
-const outputInterest = document.querySelector("#outputInterest");
 
 // Loading action Listeners
 
@@ -29,10 +24,7 @@ function calculateClick (){
 
 function main() {
     loading.style.display = "none";
-    if(numberCheck()) {
-        setOutput()
-        results.style.display = "flex";
-    }
+    if(numberCheck()) setOutput()
 }
 
 function errorMessage(message){
@@ -53,6 +45,12 @@ function numberCheck() {
 }
 
 function setOutput(){
+
+    // Getting output elements
+    const outputMonthly = document.querySelector("#outputMonthly");
+    const outputPayment = document.querySelector("#outputPayment");
+    const outputInterest = document.querySelector("#outputInterest");
+
     let p = parseFloat(loanInput.value);
     let r =  parseFloat(interestInput.value)/100/12;
     let N = parseFloat(yearInput.value)*12
@@ -65,7 +63,8 @@ function setOutput(){
         outputMonthly.textContent = monthlyPayment.toFixed(2);
         outputPayment.textContent = totalPayment.toFixed(2);
         outputInterest.textContent = totalInterest.toFixed(2);
-        
+        results.style.display = "flex";
+        document.querySelector("#asd").style.padding = "5% 0 5% 0";
     } else {
         errorMessage("Please check your numbers!")
     }
