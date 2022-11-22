@@ -16,13 +16,17 @@ loanInput.addEventListener("focus", hideError);
 interestInput.addEventListener("focus", hideError);
 yearInput.addEventListener("focus", hideError);
 
+
+let asd = 0;
 function calculateClick (){
     loading.style.display = "flex";
     results.style.display = "none";
-    setTimeout(main, 1500);
+    asd = setTimeout(main, 1500);
+    
 }
 
 function main() {
+    clearTimeout(asd)
     loading.style.display = "none";
     if(numberCheck()) setOutput()
 }
