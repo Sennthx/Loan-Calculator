@@ -30,23 +30,22 @@ function calculateClick (){
 function main() {
     loading.style.display = "none";
     if(numberCheck()) {
-        if(setOutput()) {
-
-        }
-
-
+        setOutput()
         results.style.display = "flex";
     }
+}
+
+function errorMessage(message){
+    errorMsg.textContent = message;
+    document.querySelector(".error").style.display = "flex";
 }
 
 function numberCheck() {
     let flag = true;
     for (let x in inputFields) {
-        console.log()
         if(isNaN(Number.parseInt(inputFields[x].value))){
             inputFields[x].parentElement.parentElement.style.borderColor = "rgb(255, 0, 0)";
-            errorMsg.textContent = "Please fill the forms correctly!";
-            document.querySelector(".error").style.display = "flex";
+            errorMessage("Please use only numbers!")
             flag = false;
         }
     }
@@ -54,11 +53,25 @@ function numberCheck() {
 }
 
 function setOutput(){
-    
+    let p = parseFloat(loanInput.value);
+    let r =  parseFloat(interestInput.value)/100/12;
+    let N = parseFloat(yearInput.value)*12
+
+    let monthlyPayment = (r * p / (1-Math.pow((1+r), -N)));
+    if(isFinite(monthlyPayment)) {
+        let totalPayment = (monthlyPayment*N);
+        let totalInterest = (totalPayment-p);
+        
+        outputMonthly.textContent = monthlyPayment.toFixed(2);
+        outputPayment.textContent = totalPayment.toFixed(2);
+        outputInterest.textContent = totalInterest.toFixed(2);
+        
+    } else {
+        errorMessage("Please check your numbers!")
+    }
 }
 
 function hideError() {
-    console.log(errorMsg.parentElement)
     errorMsg.parentElement.style.display = "none";
     
     for (const key in inputFields) {

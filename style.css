@@ -188,5 +188,9 @@ hr {
 }
 .right {
     background-color: rgb(247, 247, 242);
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    padding-left: 10px;
 }
 
