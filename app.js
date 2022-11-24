@@ -68,7 +68,6 @@ function setOutput(){
         outputPayment.textContent = totalPayment.toFixed(2);
         outputInterest.textContent = totalInterest.toFixed(2);
         results.style.display = "flex";
-        document.querySelector("#asd").style.padding = "5% 0 5% 0";
     } else {
         for (let x in inputFields) {
             if(Number.parseInt(inputFields[x].value) === 0){
